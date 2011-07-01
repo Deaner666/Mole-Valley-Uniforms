@@ -5,11 +5,9 @@
   <section id="branch-details">
     <h2>Branch details</h2>
     <%= f.inputs do %>
-      <%= f.input :branch, :label => "Cost Centre",
-                           :as => :select, :collection => Order::BRANCHES,
+      <%= f.input :branch, :label => "Branch",
                            :required => true,
-                           :hint => "Your branch \"Cost Centre\" reference number",
-                           :input_html => { :class => "branch" } %>
+                           :input_html => { :class => "branch", :value => "" } %>
       <%= f.input :contact, :label => "Contact name",
                             :required => true,
                             :hint => "Your name, in case we need to contact you",
