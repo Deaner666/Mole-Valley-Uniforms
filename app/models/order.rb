@@ -1,14 +1,17 @@
 # == Schema Information
-# Schema version: 20110601171954
+# Schema version: 20110704190327
 #
 # Table name: orders
 #
-#  id         :integer         not null, primary key
-#  branch     :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#  contact    :string(255)
-#  job_title  :string(255)
+#  id           :integer         not null, primary key
+#  branch       :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  contact      :string(255)
+#  job_title    :string(255)
+#  address      :text
+#  employee     :string(255)
+#  order_number :string(255)
 #
 
 class Order < ActiveRecord::Base
@@ -22,6 +25,9 @@ class Order < ActiveRecord::Base
   validates :branch, :presence => true
   validates :contact, :presence => true
   validates :job_title, :presence => true
+  validates :address, :presence => true
+  validates :employee, :presence => true
+  validates :order_number, :presence => true
   
   # Find the total cost of an order by summing the cost of its line_items
   def total

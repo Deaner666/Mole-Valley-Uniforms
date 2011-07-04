@@ -16,9 +16,12 @@
     <p style="color:f00;">If it is approved, please forward this email to <%= mail_to "sales@monmark.co.uk", "sales@monmark.co.uk" %>.</p>
     
     <h2>Branch details</h2>
-    <p>Branch ref: <%= @order.branch %></p>
+    <p>Branch No: <%= @order.branch %></p>
+    <p>Address: <%= @order.address %></p>
     <p>Branch contact: <%= @order.contact %></p>
-    <p>Contact job title: <%= @order.job_title %></p>
+    <p>Employee name (to be embroidered): <%= @order.employee %></p>
+    <p>Employee job title: <%= @order.job_title %></p>
+    <p>Order No: <%= @order.order_number %></p>
 
     <h2>Order details</h2>
     <ul>
