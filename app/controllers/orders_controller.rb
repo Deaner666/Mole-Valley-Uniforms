@@ -71,6 +71,7 @@ class OrdersController < ApplicationController
         if @order.update_attributes(params[:order])
           format.html do
             OrderMailer.order_email(@order).deliver
+            session[:order] = nil
             redirect_to(products_path, :notice => 'Order successfully submitted.')
           end
           format.xml  { head :ok }
