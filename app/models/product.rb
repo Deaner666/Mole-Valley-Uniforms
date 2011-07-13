@@ -1,14 +1,18 @@
 # == Schema Information
-# Schema version: 20110201220504
+# Schema version: 20110713205238
 #
 # Table name: products
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  stock_code :string(255)
-#  price      :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  stock_code         :string(255)
+#  price              :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class Product < ActiveRecord::Base
@@ -16,6 +20,8 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_many :orders, :through => :line_items
   has_and_belongs_to_many :sizes
+  
+  has_attached_file :image, :styles => { :thumbnail => "75x75>", :large => "300x300>" }
   
   validates :name,       :presence => true
   validates :stock_code, :presence => true

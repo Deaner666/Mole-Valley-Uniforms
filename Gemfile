@@ -14,6 +14,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'formtastic', '~> 1.1.0'
 gem 'css3buttons'
 gem 'activeadmin'
+gem "rmagick", "~> 2.13.1"
+gem "paperclip", "~> 2.3"
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

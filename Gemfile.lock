@@ -41,6 +41,7 @@ GEM
     arel (2.0.7)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    cocaine (0.1.0)
     columnize (0.3.2)
     css3buttons (0.9.4)
       actionpack (>= 3.0.0)
@@ -98,6 +99,11 @@ GEM
     mime-types (1.16)
     nokogiri (1.4.4)
     orm_adapter (0.0.5)
+    paperclip (2.3.15)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -119,6 +125,7 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     responders (0.6.4)
+    rmagick (2.13.1)
     rspec (2.3.0)
       rspec-core (~> 2.3.0)
       rspec-expectations (~> 2.3.0)
@@ -179,7 +186,9 @@ DEPENDENCIES
   fastercsv
   formtastic (~> 1.1.0)
   mailcatcher
+  paperclip (~> 2.3)
   rails (= 3.0.3)
+  rmagick (~> 2.13.1)
   rspec (= 2.3.0)
   rspec-rails (= 2.3.0)
   ruby-debug19
