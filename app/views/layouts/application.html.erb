@@ -73,30 +73,32 @@
         </div>
         
         <aside id="sidebar" class="fourcol last">
-          <section id="order-summary">
-            <h1>Your order</h1>
-            <ul>
-              <% for li in @order.line_items %>
-                <% if li.quantity != 0 && li.quantity != nil %>
-                  <li class="<%= cycle('even', 'odd') %>">
-                    <%= li.quantity %> x
-                    <%= li.product.name %>
-                    <%= "(#{li.size})" if li.size %>
-                     -
-                    <%= format_price(li.total) %>
-                  </li>
+          <% if @order %>
+            <section id="order-summary">
+              <h1>Your order</h1>
+              <ul>
+                <% for li in @order.line_items %>
+                  <% if li.quantity != 0 && li.quantity != nil %>
+                    <li class="<%= cycle('even', 'odd') %>">
+                      <%= li.quantity %> x
+                      <%= li.product.name %>
+                      <%= "(#{li.size})" if li.size %>
+                       -
+                      <%= format_price(li.total) %>
+                    </li>
+                  <% end %>
                 <% end %>
+              </ul>
+              <p><strong>Order Total: <%= format_price(@order.total) %></strong></p>
+              <%= button_group do %>
+                <%= primary_approve_pill_button_link_to "Confirm order", order_path(@order) %>
+                <%= edit_pill_button_link_to "Edit order", edit_order_path(@order) %>
               <% end %>
-            </ul>
-            <p><strong>Order Total: <%= format_price(@order.total) %></strong></p>
-            <%= button_group do %>
-              <%= primary_approve_pill_button_link_to "Confirm order", order_path(@order) %>
-              <%= edit_pill_button_link_to "Edit order", edit_order_path(@order) %>
-            <% end %>
-            <div class="extra-buttons">
-              <%= negative_trash_pill_button_link_to "Reset order", order_path(@order), :method => :delete %>
-            </div>
-          </section>
+              <div class="extra-buttons">
+                <%= negative_trash_pill_button_link_to "Reset order", order_path(@order), :method => :delete %>
+              </div>
+            </section>
+          <% end %>
           
           <section id="instructions">
             <h1>Welcome...</h1>
