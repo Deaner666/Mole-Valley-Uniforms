@@ -10,10 +10,10 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
-# gem 'aws-s3', :require => 'aws/s3'
 gem 'formtastic', '~> 1.1.0'
 gem 'css3buttons'
 gem 'activeadmin'
+gem "aws-s3", "~> 0.6.2"
 gem "rmagick", "~> 2.13.1"
 gem "paperclip", "~> 2.3"
 

@@ -21,7 +21,10 @@ class Product < ActiveRecord::Base
   has_many :orders, :through => :line_items
   has_and_belongs_to_many :sizes
   
-  has_attached_file :image, :styles => { :thumbnail => "75x75>", :large => "300x300>" }
+  has_attached_file :image, :styles => { :thumbnail => "75>x75", :large => "300>x300" },
+                            :storage => :s3,
+                            :bucket => 'molevalleyfarmers',
+                            :s3_credentials => "#{Rails.root}/config/s3.yml"
   
   validates :name,       :presence => true
   validates :stock_code, :presence => true
