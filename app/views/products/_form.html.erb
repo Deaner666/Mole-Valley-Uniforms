@@ -14,8 +14,8 @@
     <%= hidden_field_tag :order_id, @order.id %>
     <tr>
       <td class="image">
-        <% unless product.image =~ /missing/ %>
-          <%= image_tag product.image.url(:thumbnail), :alt => product.name %>
+        <% unless product.image(:thumbnail) == "/images/products/missing.png" %>
+          <%= link_to(image_tag(product.image.url(:thumbnail), :alt => product.name), product.image.url(:large)) %>
         <% end %>
       </td>
       <td class="quantity">
