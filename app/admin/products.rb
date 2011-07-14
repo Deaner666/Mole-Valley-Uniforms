@@ -19,6 +19,7 @@ ActiveAdmin.register Product do
     column :created_at
     column :updated_at
     column :image_content_type
+    default_actions
   end
   
   show do
