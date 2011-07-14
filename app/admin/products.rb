@@ -11,6 +11,16 @@ ActiveAdmin.register Product do
     f.buttons
   end
   
+  index do
+    column :id
+    column :name
+    column :stock_code
+    column :price
+    column :created_at
+    column :updated_at
+    column :image_content_type
+  end
+  
   show do
     
     attributes_table do
